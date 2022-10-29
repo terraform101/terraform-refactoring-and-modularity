@@ -1,19 +1,19 @@
-# Copyright 2021 The cert-manager Authors.
+// Copyright 2021 The cert-manager Authors.
 #
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
+//     http://www.apache.org/licenses/LICENSE-2.0
 #
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
 ---
-# Source: cert-manager/templates/templates.out
+// Source: cert-manager/templates/templates.out
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -24,7 +24,7 @@ metadata:
     app: 'cert-manager'
     app.kubernetes.io/name: 'cert-manager'
     app.kubernetes.io/instance: 'cert-manager'
-    # Generated labels
+    // Generated labels
     app.kubernetes.io/version: "v1.5.4"
 spec:
   group: cert-manager.io
@@ -40,17 +40,17 @@ spec:
       - cert-manager
   scope: Namespaced
   conversion:
-    # a Webhook strategy instruct API server to call an external webhook for any conversion between custom resources.
+    // a Webhook strategy instruct API server to call an external webhook for any conversion between custom resources.
     strategy: Webhook
-    # webhookClientConfig is required when strategy is `Webhook` and it configures the webhook endpoint to be called by API server.
+    // webhookClientConfig is required when strategy is `Webhook` and it configures the webhook endpoint to be called by API server.
     webhook:
-      # We don't actually support `v1beta1` but is listed here as it is a
-      # required value for [Kubernetes v1.16](kubernetes/kubernetes#82023). The
-      # API server reads the supported versions in order, so _should always_
-      # attempt a `v1` request which is understood by the cert-manager webhook.
-      # Any `v1beta1` request will return an error and fail closed for that
-      # resource (the whole object request is rejected).
-      # When we no longer support v1.16 we can remove `v1beta1` from this list.
+      // We don't actually support `v1beta1` but is listed here as it is a
+      // required value for [Kubernetes v1.16](kubernetes/kubernetes#82023). The
+      // API server reads the supported versions in order, so _should always_
+      // attempt a `v1` request which is understood by the cert-manager webhook.
+      // Any `v1beta1` request will return an error and fail closed for that
+      // resource (the whole object request is rejected).
+      // When we no longer support v1.16 we can remove `v1beta1` from this list.
       conversionReviewVersions: ["v1", "v1beta1"]
       clientConfig:
         #
@@ -741,7 +741,7 @@ spec:
       served: true
       storage: true
 ---
-# Source: cert-manager/templates/templates.out
+// Source: cert-manager/templates/templates.out
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -752,7 +752,7 @@ metadata:
     app: 'cert-manager'
     app.kubernetes.io/name: 'cert-manager'
     app.kubernetes.io/instance: 'cert-manager'
-    # Generated labels
+    // Generated labels
     app.kubernetes.io/version: "v1.5.4"
 spec:
   group: cert-manager.io
@@ -768,17 +768,17 @@ spec:
       - cert-manager
   scope: Namespaced
   conversion:
-    # a Webhook strategy instruct API server to call an external webhook for any conversion between custom resources.
+    // a Webhook strategy instruct API server to call an external webhook for any conversion between custom resources.
     strategy: Webhook
-    # webhookClientConfig is required when strategy is `Webhook` and it configures the webhook endpoint to be called by API server.
+    // webhookClientConfig is required when strategy is `Webhook` and it configures the webhook endpoint to be called by API server.
     webhook:
-      # We don't actually support `v1beta1` but is listed here as it is a
-      # required value for [Kubernetes v1.16](kubernetes/kubernetes#82023). The
-      # API server reads the supported versions in order, so _should always_
-      # attempt a `v1` request which is understood by the cert-manager webhook.
-      # Any `v1beta1` request will return an error and fail closed for that
-      # resource (the whole object request is rejected).
-      # When we no longer support v1.16 we can remove `v1beta1` from this list.
+      // We don't actually support `v1beta1` but is listed here as it is a
+      // required value for [Kubernetes v1.16](kubernetes/kubernetes#82023). The
+      // API server reads the supported versions in order, so _should always_
+      // attempt a `v1` request which is understood by the cert-manager webhook.
+      // Any `v1beta1` request will return an error and fail closed for that
+      // resource (the whole object request is rejected).
+      // When we no longer support v1.16 we can remove `v1beta1` from this list.
       conversionReviewVersions: ["v1", "v1beta1"]
       clientConfig:
         #
@@ -2062,7 +2062,7 @@ spec:
       served: true
       storage: true
 ---
-# Source: cert-manager/templates/templates.out
+// Source: cert-manager/templates/templates.out
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -2073,7 +2073,7 @@ metadata:
     app: 'cert-manager'
     app.kubernetes.io/name: 'cert-manager'
     app.kubernetes.io/instance: 'cert-manager'
-    # Generated labels
+    // Generated labels
     app.kubernetes.io/version: "v1.5.4"
 spec:
   group: acme.cert-manager.io
@@ -2087,17 +2087,17 @@ spec:
       - cert-manager-acme
   scope: Namespaced
   conversion:
-    # a Webhook strategy instruct API server to call an external webhook for any conversion between custom resources.
+    // a Webhook strategy instruct API server to call an external webhook for any conversion between custom resources.
     strategy: Webhook
-    # webhookClientConfig is required when strategy is `Webhook` and it configures the webhook endpoint to be called by API server.
+    // webhookClientConfig is required when strategy is `Webhook` and it configures the webhook endpoint to be called by API server.
     webhook:
-      # We don't actually support `v1beta1` but is listed here as it is a
-      # required value for [Kubernetes v1.16](kubernetes/kubernetes#82023). The
-      # API server reads the supported versions in order, so _should always_
-      # attempt a `v1` request which is understood by the cert-manager webhook.
-      # Any `v1beta1` request will return an error and fail closed for that
-      # resource (the whole object request is rejected).
-      # When we no longer support v1.16 we can remove `v1beta1` from this list.
+      // We don't actually support `v1beta1` but is listed here as it is a
+      // required value for [Kubernetes v1.16](kubernetes/kubernetes#82023). The
+      // API server reads the supported versions in order, so _should always_
+      // attempt a `v1` request which is understood by the cert-manager webhook.
+      // Any `v1beta1` request will return an error and fail closed for that
+      // resource (the whole object request is rejected).
+      // When we no longer support v1.16 we can remove `v1beta1` from this list.
       conversionReviewVersions: ["v1", "v1beta1"]
       clientConfig:
         #
@@ -5938,7 +5938,7 @@ spec:
       subresources:
         status: {}
 ---
-# Source: cert-manager/templates/templates.out
+// Source: cert-manager/templates/templates.out
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -5949,7 +5949,7 @@ metadata:
     app: 'cert-manager'
     app.kubernetes.io/name: 'cert-manager'
     app.kubernetes.io/instance: 'cert-manager'
-    # Generated labels
+    // Generated labels
     app.kubernetes.io/version: "v1.5.4"
 spec:
   group: cert-manager.io
@@ -5962,17 +5962,17 @@ spec:
       - cert-manager
   scope: Cluster
   conversion:
-    # a Webhook strategy instruct API server to call an external webhook for any conversion between custom resources.
+    // a Webhook strategy instruct API server to call an external webhook for any conversion between custom resources.
     strategy: Webhook
-    # webhookClientConfig is required when strategy is `Webhook` and it configures the webhook endpoint to be called by API server.
+    // webhookClientConfig is required when strategy is `Webhook` and it configures the webhook endpoint to be called by API server.
     webhook:
-      # We don't actually support `v1beta1` but is listed here as it is a
-      # required value for [Kubernetes v1.16](kubernetes/kubernetes#82023). The
-      # API server reads the supported versions in order, so _should always_
-      # attempt a `v1` request which is understood by the cert-manager webhook.
-      # Any `v1beta1` request will return an error and fail closed for that
-      # resource (the whole object request is rejected).
-      # When we no longer support v1.16 we can remove `v1beta1` from this list.
+      // We don't actually support `v1beta1` but is listed here as it is a
+      // required value for [Kubernetes v1.16](kubernetes/kubernetes#82023). The
+      // API server reads the supported versions in order, so _should always_
+      // attempt a `v1` request which is understood by the cert-manager webhook.
+      // Any `v1beta1` request will return an error and fail closed for that
+      // resource (the whole object request is rejected).
+      // When we no longer support v1.16 we can remove `v1beta1` from this list.
       conversionReviewVersions: ["v1", "v1beta1"]
       clientConfig:
         #
@@ -10663,7 +10663,7 @@ spec:
       served: true
       storage: true
 ---
-# Source: cert-manager/templates/templates.out
+// Source: cert-manager/templates/templates.out
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -10674,7 +10674,7 @@ metadata:
     app: 'cert-manager'
     app.kubernetes.io/name: 'cert-manager'
     app.kubernetes.io/instance: 'cert-manager'
-    # Generated labels
+    // Generated labels
     app.kubernetes.io/version: "v1.5.4"
 spec:
   group: cert-manager.io
@@ -10687,17 +10687,17 @@ spec:
       - cert-manager
   scope: Namespaced
   conversion:
-    # a Webhook strategy instruct API server to call an external webhook for any conversion between custom resources.
+    // a Webhook strategy instruct API server to call an external webhook for any conversion between custom resources.
     strategy: Webhook
-    # webhookClientConfig is required when strategy is `Webhook` and it configures the webhook endpoint to be called by API server.
+    // webhookClientConfig is required when strategy is `Webhook` and it configures the webhook endpoint to be called by API server.
     webhook:
-      # We don't actually support `v1beta1` but is listed here as it is a
-      # required value for [Kubernetes v1.16](kubernetes/kubernetes#82023). The
-      # API server reads the supported versions in order, so _should always_
-      # attempt a `v1` request which is understood by the cert-manager webhook.
-      # Any `v1beta1` request will return an error and fail closed for that
-      # resource (the whole object request is rejected).
-      # When we no longer support v1.16 we can remove `v1beta1` from this list.
+      // We don't actually support `v1beta1` but is listed here as it is a
+      // required value for [Kubernetes v1.16](kubernetes/kubernetes#82023). The
+      // API server reads the supported versions in order, so _should always_
+      // attempt a `v1` request which is understood by the cert-manager webhook.
+      // Any `v1beta1` request will return an error and fail closed for that
+      // resource (the whole object request is rejected).
+      // When we no longer support v1.16 we can remove `v1beta1` from this list.
       conversionReviewVersions: ["v1", "v1beta1"]
       clientConfig:
         #
@@ -15388,7 +15388,7 @@ spec:
       served: true
       storage: true
 ---
-# Source: cert-manager/templates/templates.out
+// Source: cert-manager/templates/templates.out
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -15399,7 +15399,7 @@ metadata:
     app: 'cert-manager'
     app.kubernetes.io/name: 'cert-manager'
     app.kubernetes.io/instance: 'cert-manager'
-    # Generated labels
+    // Generated labels
     app.kubernetes.io/version: "v1.5.4"
 spec:
   group: acme.cert-manager.io
@@ -15413,17 +15413,17 @@ spec:
       - cert-manager-acme
   scope: Namespaced
   conversion:
-    # a Webhook strategy instruct API server to call an external webhook for any conversion between custom resources.
+    // a Webhook strategy instruct API server to call an external webhook for any conversion between custom resources.
     strategy: Webhook
-    # webhookClientConfig is required when strategy is `Webhook` and it configures the webhook endpoint to be called by API server.
+    // webhookClientConfig is required when strategy is `Webhook` and it configures the webhook endpoint to be called by API server.
     webhook:
-      # We don't actually support `v1beta1` but is listed here as it is a
-      # required value for [Kubernetes v1.16](kubernetes/kubernetes#82023). The
-      # API server reads the supported versions in order, so _should always_
-      # attempt a `v1` request which is understood by the cert-manager webhook.
-      # Any `v1beta1` request will return an error and fail closed for that
-      # resource (the whole object request is rejected).
-      # When we no longer support v1.16 we can remove `v1beta1` from this list.
+      // We don't actually support `v1beta1` but is listed here as it is a
+      // required value for [Kubernetes v1.16](kubernetes/kubernetes#82023). The
+      // API server reads the supported versions in order, so _should always_
+      // attempt a `v1` request which is understood by the cert-manager webhook.
+      // Any `v1beta1` request will return an error and fail closed for that
+      // resource (the whole object request is rejected).
+      // When we no longer support v1.16 we can remove `v1beta1` from this list.
       conversionReviewVersions: ["v1", "v1beta1"]
       clientConfig:
         #
@@ -16069,7 +16069,7 @@ kind: Namespace
 metadata:
   name: cert-manager
 ---
-# Source: cert-manager/templates/cainjector-serviceaccount.yaml
+// Source: cert-manager/templates/cainjector-serviceaccount.yaml
 apiVersion: v1
 kind: ServiceAccount
 automountServiceAccountToken: true
@@ -16083,7 +16083,7 @@ metadata:
     app.kubernetes.io/component: "cainjector"
     app.kubernetes.io/version: "v1.5.4"
 ---
-# Source: cert-manager/templates/serviceaccount.yaml
+// Source: cert-manager/templates/serviceaccount.yaml
 apiVersion: v1
 kind: ServiceAccount
 automountServiceAccountToken: true
@@ -16097,7 +16097,7 @@ metadata:
     app.kubernetes.io/component: "controller"
     app.kubernetes.io/version: "v1.5.4"
 ---
-# Source: cert-manager/templates/webhook-serviceaccount.yaml
+// Source: cert-manager/templates/webhook-serviceaccount.yaml
 apiVersion: v1
 kind: ServiceAccount
 automountServiceAccountToken: true
@@ -16111,7 +16111,7 @@ metadata:
     app.kubernetes.io/component: "webhook"
     app.kubernetes.io/version: "v1.5.4"
 ---
-# Source: cert-manager/templates/cainjector-rbac.yaml
+// Source: cert-manager/templates/cainjector-rbac.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -16145,8 +16145,8 @@ rules:
     resources: ["auditsinks"]
     verbs: ["get", "list", "watch", "update"]
 ---
-# Source: cert-manager/templates/rbac.yaml
-# Issuer controller role
+// Source: cert-manager/templates/rbac.yaml
+// Issuer controller role
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -16171,8 +16171,8 @@ rules:
     resources: ["events"]
     verbs: ["create", "patch"]
 ---
-# Source: cert-manager/templates/rbac.yaml
-# ClusterIssuer controller role
+// Source: cert-manager/templates/rbac.yaml
+// ClusterIssuer controller role
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -16197,8 +16197,8 @@ rules:
     resources: ["events"]
     verbs: ["create", "patch"]
 ---
-# Source: cert-manager/templates/rbac.yaml
-# Certificates controller role
+// Source: cert-manager/templates/rbac.yaml
+// Certificates controller role
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -16216,9 +16216,9 @@ rules:
   - apiGroups: ["cert-manager.io"]
     resources: ["certificates", "certificaterequests", "clusterissuers", "issuers"]
     verbs: ["get", "list", "watch"]
-  # We require these rules to support users with the OwnerReferencesPermissionEnforcement
-  # admission controller enabled:
-  # https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#ownerreferencespermissionenforcement
+  // We require these rules to support users with the OwnerReferencesPermissionEnforcement
+  // admission controller enabled:
+  // https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#ownerreferencespermissionenforcement
   - apiGroups: ["cert-manager.io"]
     resources: ["certificates/finalizers", "certificaterequests/finalizers"]
     verbs: ["update"]
@@ -16232,8 +16232,8 @@ rules:
     resources: ["events"]
     verbs: ["create", "patch"]
 ---
-# Source: cert-manager/templates/rbac.yaml
-# Orders controller role
+// Source: cert-manager/templates/rbac.yaml
+// Orders controller role
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -16257,9 +16257,9 @@ rules:
   - apiGroups: ["acme.cert-manager.io"]
     resources: ["challenges"]
     verbs: ["create", "delete"]
-  # We require these rules to support users with the OwnerReferencesPermissionEnforcement
-  # admission controller enabled:
-  # https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#ownerreferencespermissionenforcement
+  // We require these rules to support users with the OwnerReferencesPermissionEnforcement
+  // admission controller enabled:
+  // https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#ownerreferencespermissionenforcement
   - apiGroups: ["acme.cert-manager.io"]
     resources: ["orders/finalizers"]
     verbs: ["update"]
@@ -16270,8 +16270,8 @@ rules:
     resources: ["events"]
     verbs: ["create", "patch"]
 ---
-# Source: cert-manager/templates/rbac.yaml
-# Challenges controller role
+// Source: cert-manager/templates/rbac.yaml
+// Challenges controller role
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -16283,27 +16283,27 @@ metadata:
     app.kubernetes.io/component: "controller"
     app.kubernetes.io/version: "v1.5.4"
 rules:
-  # Use to update challenge resource status
+  // Use to update challenge resource status
   - apiGroups: ["acme.cert-manager.io"]
     resources: ["challenges", "challenges/status"]
     verbs: ["update"]
-  # Used to watch challenge resources
+  // Used to watch challenge resources
   - apiGroups: ["acme.cert-manager.io"]
     resources: ["challenges"]
     verbs: ["get", "list", "watch"]
-  # Used to watch challenges, issuer and clusterissuer resources
+  // Used to watch challenges, issuer and clusterissuer resources
   - apiGroups: ["cert-manager.io"]
     resources: ["issuers", "clusterissuers"]
     verbs: ["get", "list", "watch"]
-  # Need to be able to retrieve ACME account private key to complete challenges
+  // Need to be able to retrieve ACME account private key to complete challenges
   - apiGroups: [""]
     resources: ["secrets"]
     verbs: ["get", "list", "watch"]
-  # Used to create events
+  // Used to create events
   - apiGroups: [""]
     resources: ["events"]
     verbs: ["create", "patch"]
-  # HTTP01 rules
+  // HTTP01 rules
   - apiGroups: [""]
     resources: ["pods", "services"]
     verbs: ["get", "list", "watch", "create", "delete"]
@@ -16313,25 +16313,25 @@ rules:
   - apiGroups: [ "networking.x-k8s.io" ]
     resources: [ "httproutes" ]
     verbs: ["get", "list", "watch", "create", "delete", "update"]
-  # We require the ability to specify a custom hostname when we are creating
-  # new ingress resources.
-  # See: https://github.com/openshift/origin/blob/21f191775636f9acadb44fa42beeb4f75b255532/pkg/route/apiserver/admission/ingress_admission.go#L84-L148
+  // We require the ability to specify a custom hostname when we are creating
+  // new ingress resources.
+  // See: https://github.com/openshift/origin/blob/21f191775636f9acadb44fa42beeb4f75b255532/pkg/route/apiserver/admission/ingress_admission.go#L84-L148
   - apiGroups: ["route.openshift.io"]
     resources: ["routes/custom-host"]
     verbs: ["create"]
-  # We require these rules to support users with the OwnerReferencesPermissionEnforcement
-  # admission controller enabled:
-  # https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#ownerreferencespermissionenforcement
+  // We require these rules to support users with the OwnerReferencesPermissionEnforcement
+  // admission controller enabled:
+  // https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#ownerreferencespermissionenforcement
   - apiGroups: ["acme.cert-manager.io"]
     resources: ["challenges/finalizers"]
     verbs: ["update"]
-  # DNS01 rules (duplicated above)
+  // DNS01 rules (duplicated above)
   - apiGroups: [""]
     resources: ["secrets"]
     verbs: ["get", "list", "watch"]
 ---
-# Source: cert-manager/templates/rbac.yaml
-# ingress-shim controller role
+// Source: cert-manager/templates/rbac.yaml
+// ingress-shim controller role
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -16352,9 +16352,9 @@ rules:
   - apiGroups: ["networking.k8s.io"]
     resources: ["ingresses"]
     verbs: ["get", "list", "watch"]
-  # We require these rules to support users with the OwnerReferencesPermissionEnforcement
-  # admission controller enabled:
-  # https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#ownerreferencespermissionenforcement
+  // We require these rules to support users with the OwnerReferencesPermissionEnforcement
+  // admission controller enabled:
+  // https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#ownerreferencespermissionenforcement
   - apiGroups: ["networking.k8s.io"]
     resources: ["ingresses/finalizers"]
     verbs: ["update"]
@@ -16368,7 +16368,7 @@ rules:
     resources: ["events"]
     verbs: ["create", "patch"]
 ---
-# Source: cert-manager/templates/rbac.yaml
+// Source: cert-manager/templates/rbac.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -16390,7 +16390,7 @@ rules:
     resources: ["challenges", "orders"]
     verbs: ["get", "list", "watch"]
 ---
-# Source: cert-manager/templates/rbac.yaml
+// Source: cert-manager/templates/rbac.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -16411,8 +16411,8 @@ rules:
     resources: ["challenges", "orders"]
     verbs: ["create", "delete", "deletecollection", "patch", "update"]
 ---
-# Source: cert-manager/templates/rbac.yaml
-# Permission to approve CertificateRequests referencing cert-manager.io Issuers and ClusterIssuers
+// Source: cert-manager/templates/rbac.yaml
+// Permission to approve CertificateRequests referencing cert-manager.io Issuers and ClusterIssuers
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -16429,10 +16429,10 @@ rules:
     verbs: ["approve"]
     resourceNames: ["issuers.cert-manager.io/*", "clusterissuers.cert-manager.io/*"]
 ---
-# Source: cert-manager/templates/rbac.yaml
-# Permission to:
-# - Update and sign CertificatSigningeRequests referencing cert-manager.io Issuers and ClusterIssuers
-# - Perform SubjectAccessReviews to test whether users are able to reference Namespaced Issuers
+// Source: cert-manager/templates/rbac.yaml
+// Permission to:
+// - Update and sign CertificatSigningeRequests referencing cert-manager.io Issuers and ClusterIssuers
+// - Perform SubjectAccessReviews to test whether users are able to reference Namespaced Issuers
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -16458,7 +16458,7 @@ rules:
     resources: ["subjectaccessreviews"]
     verbs: ["create"]
 ---
-# Source: cert-manager/templates/webhook-rbac.yaml
+// Source: cert-manager/templates/webhook-rbac.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -16474,7 +16474,7 @@ rules:
     resources: ["subjectaccessreviews"]
     verbs: ["create"]
 ---
-# Source: cert-manager/templates/cainjector-rbac.yaml
+// Source: cert-manager/templates/cainjector-rbac.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
@@ -16494,7 +16494,7 @@ subjects:
     namespace: "cert-manager"
     kind: ServiceAccount
 ---
-# Source: cert-manager/templates/rbac.yaml
+// Source: cert-manager/templates/rbac.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
@@ -16514,7 +16514,7 @@ subjects:
     namespace: "cert-manager"
     kind: ServiceAccount
 ---
-# Source: cert-manager/templates/rbac.yaml
+// Source: cert-manager/templates/rbac.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
@@ -16534,7 +16534,7 @@ subjects:
     namespace: "cert-manager"
     kind: ServiceAccount
 ---
-# Source: cert-manager/templates/rbac.yaml
+// Source: cert-manager/templates/rbac.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
@@ -16554,7 +16554,7 @@ subjects:
     namespace: "cert-manager"
     kind: ServiceAccount
 ---
-# Source: cert-manager/templates/rbac.yaml
+// Source: cert-manager/templates/rbac.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
@@ -16574,7 +16574,7 @@ subjects:
     namespace: "cert-manager"
     kind: ServiceAccount
 ---
-# Source: cert-manager/templates/rbac.yaml
+// Source: cert-manager/templates/rbac.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
@@ -16594,7 +16594,7 @@ subjects:
     namespace: "cert-manager"
     kind: ServiceAccount
 ---
-# Source: cert-manager/templates/rbac.yaml
+// Source: cert-manager/templates/rbac.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
@@ -16614,7 +16614,7 @@ subjects:
     namespace: "cert-manager"
     kind: ServiceAccount
 ---
-# Source: cert-manager/templates/rbac.yaml
+// Source: cert-manager/templates/rbac.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
@@ -16634,7 +16634,7 @@ subjects:
     namespace: "cert-manager"
     kind: ServiceAccount
 ---
-# Source: cert-manager/templates/rbac.yaml
+// Source: cert-manager/templates/rbac.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
@@ -16654,7 +16654,7 @@ subjects:
     namespace: "cert-manager"
     kind: ServiceAccount
 ---
-# Source: cert-manager/templates/webhook-rbac.yaml
+// Source: cert-manager/templates/webhook-rbac.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
@@ -16675,8 +16675,8 @@ subjects:
     name: cert-manager-webhook
     namespace: cert-manager
 ---
-# Source: cert-manager/templates/cainjector-rbac.yaml
-# leader election rules
+// Source: cert-manager/templates/cainjector-rbac.yaml
+// leader election rules
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
@@ -16689,12 +16689,12 @@ metadata:
     app.kubernetes.io/component: "cainjector"
     app.kubernetes.io/version: "v1.5.4"
 rules:
-  # Used for leader election by the controller
-  # cert-manager-cainjector-leader-election is used by the CertificateBased injector controller
-  #   see cmd/cainjector/start.go#L113
-  # cert-manager-cainjector-leader-election-core is used by the SecretBased injector controller
-  #   see cmd/cainjector/start.go#L137
-  # See also: https://github.com/kubernetes-sigs/controller-runtime/pull/1144#discussion_r480173688
+  // Used for leader election by the controller
+  // cert-manager-cainjector-leader-election is used by the CertificateBased injector controller
+  //   see cmd/cainjector/start.go#L113
+  // cert-manager-cainjector-leader-election-core is used by the SecretBased injector controller
+  //   see cmd/cainjector/start.go#L137
+  // See also: https://github.com/kubernetes-sigs/controller-runtime/pull/1144#discussion_r480173688
   - apiGroups: [""]
     resources: ["configmaps"]
     resourceNames: ["cert-manager-cainjector-leader-election", "cert-manager-cainjector-leader-election-core"]
@@ -16710,7 +16710,7 @@ rules:
     resources: ["leases"]
     verbs: ["create"]
 ---
-# Source: cert-manager/templates/rbac.yaml
+// Source: cert-manager/templates/rbac.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
@@ -16723,8 +16723,8 @@ metadata:
     app.kubernetes.io/component: "controller"
     app.kubernetes.io/version: "v1.5.4"
 rules:
-  # Used for leader election by the controller
-  # See also: https://github.com/kubernetes-sigs/controller-runtime/pull/1144#discussion_r480173688
+  // Used for leader election by the controller
+  // See also: https://github.com/kubernetes-sigs/controller-runtime/pull/1144#discussion_r480173688
   - apiGroups: [""]
     resources: ["configmaps"]
     resourceNames: ["cert-manager-controller"]
@@ -16740,7 +16740,7 @@ rules:
     resources: ["leases"]
     verbs: ["create"]
 ---
-# Source: cert-manager/templates/webhook-rbac.yaml
+// Source: cert-manager/templates/webhook-rbac.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
@@ -16758,14 +16758,14 @@ rules:
     resourceNames:
       - 'cert-manager-webhook-ca'
     verbs: ["get", "list", "watch", "update"]
-  # It's not possible to grant CREATE permission on a single resourceName.
+  // It's not possible to grant CREATE permission on a single resourceName.
   - apiGroups: [""]
     resources: ["secrets"]
     verbs: ["create"]
 ---
-# Source: cert-manager/templates/cainjector-rbac.yaml
-# grant cert-manager permission to manage the leaderelection configmap in the
-# leader election namespace
+// Source: cert-manager/templates/cainjector-rbac.yaml
+// grant cert-manager permission to manage the leaderelection configmap in the
+// leader election namespace
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
@@ -16786,9 +16786,9 @@ subjects:
     name: cert-manager-cainjector
     namespace: cert-manager
 ---
-# Source: cert-manager/templates/rbac.yaml
-# grant cert-manager permission to manage the leaderelection configmap in the
-# leader election namespace
+// Source: cert-manager/templates/rbac.yaml
+// grant cert-manager permission to manage the leaderelection configmap in the
+// leader election namespace
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
@@ -16810,7 +16810,7 @@ subjects:
     name: cert-manager
     namespace: cert-manager
 ---
-# Source: cert-manager/templates/webhook-rbac.yaml
+// Source: cert-manager/templates/webhook-rbac.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
@@ -16832,7 +16832,7 @@ subjects:
     name: cert-manager-webhook
     namespace: cert-manager
 ---
-# Source: cert-manager/templates/service.yaml
+// Source: cert-manager/templates/service.yaml
 apiVersion: v1
 kind: Service
 metadata:
@@ -16856,7 +16856,7 @@ spec:
     app.kubernetes.io/instance: cert-manager
     app.kubernetes.io/component: "controller"
 ---
-# Source: cert-manager/templates/webhook-service.yaml
+// Source: cert-manager/templates/webhook-service.yaml
 apiVersion: v1
 kind: Service
 metadata:
@@ -16880,7 +16880,7 @@ spec:
     app.kubernetes.io/instance: cert-manager
     app.kubernetes.io/component: "webhook"
 ---
-# Source: cert-manager/templates/cainjector-deployment.yaml
+// Source: cert-manager/templates/cainjector-deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -16926,7 +16926,7 @@ spec:
           resources:
             {}
 ---
-# Source: cert-manager/templates/deployment.yaml
+// Source: cert-manager/templates/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -16980,7 +16980,7 @@ spec:
           resources:
             {}
 ---
-# Source: cert-manager/templates/webhook-deployment.yaml
+// Source: cert-manager/templates/webhook-deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -17053,7 +17053,7 @@ spec:
           resources:
             {}
 ---
-# Source: cert-manager/templates/webhook-mutating-webhook.yaml
+// Source: cert-manager/templates/webhook-mutating-webhook.yaml
 apiVersion: admissionregistration.k8s.io/v1
 kind: MutatingWebhookConfiguration
 metadata:
@@ -17079,22 +17079,22 @@ webhooks:
           - UPDATE
         resources:
           - "*/*"
-    # We don't actually support `v1beta1` but is listed here as it is a
-    # required value for
-    # [Kubernetes v1.16](https://github.com/kubernetes/kubernetes/issues/82025).
-    # The API server reads the supported versions in order, so _should always_
-    # attempt a `v1` request which is understood by the cert-manager webhook.
-    # Any `v1beta1` request will return an error and fail closed for that
-    # resource (the whole object request is rejected). When we no longer
-    # support v1.16 we can remove `v1beta1` from this list.
+    // We don't actually support `v1beta1` but is listed here as it is a
+    // required value for
+    // [Kubernetes v1.16](https://github.com/kubernetes/kubernetes/issues/82025).
+    // The API server reads the supported versions in order, so _should always_
+    // attempt a `v1` request which is understood by the cert-manager webhook.
+    // Any `v1beta1` request will return an error and fail closed for that
+    // resource (the whole object request is rejected). When we no longer
+    // support v1.16 we can remove `v1beta1` from this list.
     admissionReviewVersions: ["v1", "v1beta1"]
-    # This webhook only accepts v1 cert-manager resources.
-    # Equivalent matchPolicy ensures that non-v1 resource requests are sent to
-    # this webhook (after the resources have been converted to v1).
+    // This webhook only accepts v1 cert-manager resources.
+    // Equivalent matchPolicy ensures that non-v1 resource requests are sent to
+    // this webhook (after the resources have been converted to v1).
     matchPolicy: Equivalent
     timeoutSeconds: 10
     failurePolicy: Fail
-    # Only include 'sideEffects' field in Kubernetes 1.12+
+    // Only include 'sideEffects' field in Kubernetes 1.12+
     sideEffects: None
     clientConfig:
       service:
@@ -17102,7 +17102,7 @@ webhooks:
         namespace: "cert-manager"
         path: /mutate
 ---
-# Source: cert-manager/templates/webhook-validating-webhook.yaml
+// Source: cert-manager/templates/webhook-validating-webhook.yaml
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingWebhookConfiguration
 metadata:
@@ -17138,18 +17138,18 @@ webhooks:
           - UPDATE
         resources:
           - "*/*"
-    # We don't actually support `v1beta1` but is listed here as it is a
-    # required value for
-    # [Kubernetes v1.16](https://github.com/kubernetes/kubernetes/issues/82025).
-    # The API server reads the supported versions in order, so _should always_
-    # attempt a `v1` request which is understood by the cert-manager webhook.
-    # Any `v1beta1` request will return an error and fail closed for that
-    # resource (the whole object request is rejected). When we no longer
-    # support v1.16 we can remove `v1beta1` from this list.
+    // We don't actually support `v1beta1` but is listed here as it is a
+    // required value for
+    // [Kubernetes v1.16](https://github.com/kubernetes/kubernetes/issues/82025).
+    // The API server reads the supported versions in order, so _should always_
+    // attempt a `v1` request which is understood by the cert-manager webhook.
+    // Any `v1beta1` request will return an error and fail closed for that
+    // resource (the whole object request is rejected). When we no longer
+    // support v1.16 we can remove `v1beta1` from this list.
     admissionReviewVersions: ["v1", "v1beta1"]
-    # This webhook only accepts v1 cert-manager resources.
-    # Equivalent matchPolicy ensures that non-v1 resource requests are sent to
-    # this webhook (after the resources have been converted to v1).
+    // This webhook only accepts v1 cert-manager resources.
+    // Equivalent matchPolicy ensures that non-v1 resource requests are sent to
+    // this webhook (after the resources have been converted to v1).
     matchPolicy: Equivalent
     timeoutSeconds: 10
     failurePolicy: Fail
