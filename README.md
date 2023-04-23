@@ -68,14 +68,14 @@
   - 여러 서버에서 동시에 사용 가능하고 mount해서 서비스할 수 있는 File Storage(NAS) 생성
   - 자사 통합통계 등 로그 저장에서 활용 가능
 
-##// [Security]
+### [Security]
 
 - [0510_bastion.tf](https://github.com/ucmp-template-repos/tf-aws-eks-ingress/blob/main/0510_bastion.tf) 
   - EKS Private 접근을 위한 터미널 용 서버
 - [0520_waf.tf](https://github.com/ucmp-template-repos/tf-aws-eks-ingress/blob/main/0520_waf.tf) 
   - web acl 적용
 
-##// [CI/CD]
+### [CI/CD]
 
 - [0710_ecr.tf](https://github.com/ucmp-template-repos/tf-aws-eks-ingress/blob/main/0710_ecr.tf) 
   - Container 저장 설정
