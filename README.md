@@ -1,4 +1,4 @@
-// Terraform example - UCMP
+# Terraform example - UCMP
 
 > Owner : LG UPLUS
 >
@@ -6,22 +6,22 @@
 >
 > Type : aws-u-cloud-service-infrastructure-1
 
-#// 설명
+## 설명
 
 - Terraform 템플릿 - AWS EKS 배포 및 Ingress 구성
 
 ![image](./Template_UCSI_1_prd.jpeg)
 
-#// 파일 정의
+## 파일 정의
 
-##// [공통 파일]
+### [공통 파일]
 
 - [0010_provider.tf](https://github.com/ucmp-template-repos/tf-aws-eks-ingress/blob/main/0010_provider.tf) 
   - CSP(AWS,GCP), Kubernetes 자원 설정을 위한 Provider 선언
 - [0020_variables.tf](https://github.com/ucmp-template-repos/tf-aws-eks-ingress/blob/main/0020_variables.tf)
   - 프로젝트명, 자원이름, IP대역, COST_CENTER 등 프로젝트별로 특화된 값만 설정해서 coding을 최소화하도록 변수화함
 
-##// [Network]
+### [Network]
 
 - [0110_vpc.tf](https://github.com/ucmp-template-repos/tf-aws-eks-ingress/blob/main/0110_vpc.tf)
   - vpc(Virtual Private Cloud)에서는 subnet에서 사용할 사설 네트웍IP대역을 정의
@@ -40,7 +40,7 @@
 - [0170_security_group.tf](https://github.com/ucmp-template-repos/tf-aws-eks-ingress/blob/main/0170_security_group.tf)
   - IN/OUTBOUND 트래픽에 대해 차단/허용할지에 대한 설정
 
-##// [Computing]
+### [Computing]
 
 - [0210_ekscluster.tf](https://github.com/ucmp-template-repos/tf-aws-eks-ingress/blob/main/0210_ekscluster.tf)
   - Cluster 생성 후 EKS 권한을 얻는 role 설정
@@ -53,13 +53,13 @@
   - ingress-controller 배포 및 동작을 위한 Policy, Role, Attachment 생성
   - kubectl을 통한 cert-manager 및 ingress-controller 배포
 
-##// [DB]
+### [DB]
 
 - [0310_rds_aurora.tf](https://github.com/ucmp-template-repos/tf-aws-eks-ingress/blob/main/0310_rds_aurora.tf) 
   - AWS Aurora DB 이중화 구성
   - DB 전용 subnet 설정
 
-##// [Storage]
+### [Storage]
 
 - [0410_s3.tf](https://github.com/ucmp-template-repos/tf-aws-eks-ingress/blob/main/0410_s3.tf) 
   - Contents 저장할 Object Storage S3 bucket 생성
