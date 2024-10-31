@@ -1,10 +1,4 @@
-# Terraform example - UCMP
-
-> Owner : LG유플러스
->
-> Last Update : May, 2021
->
-> Type : aws-u-cloud-service-infrastructure-1
+# Terraform example
 
 ## 설명
 
